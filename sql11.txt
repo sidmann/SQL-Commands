@@ -1,0 +1,109 @@
+INF:
+
+
+employee
+--------
+sno	name	age	skills
+---	----	---	------
+1	ramu	22	C, C++
+2	manu	23	C, Java
+3	mohan	25	C, C++, Java
+4	pavan	77	C, Oracle
+
+
+
+
+employee
+--------
+
+sno	name	age	
+---	----	---	
+1	ramu	22	
+2	manu	23	
+3	mohan	25	
+4	pavan	77	
+
+
+employee_skill
+--------------
+emp_sno		skill
+-------		-----
+1		C
+1		C++
+2		C
+2		java
+3		C
+3		C++
+3		java
+4		C
+4		oracle
+
+
+
+2NF
+
+
+trainer
+-------
+t_id		Name		age		subject
+----		----		---		-------
+1		manu		28		Maths
+1		manu		28		Physics
+2		Ramu		38		Maths
+2		Ramu		38		Physics
+
+TRAINER
+-------
+t_id	name	age
+----	----	---
+1	Manu	28
+2	Ramu	38
+
+
+TRAINER_SUBJECT
+---------------
+t_id	subject
+----	-------
+1	Maths
+1	Physics
+2	Maths
+2	Physics
+
+
+3nf
+
+CREATE TABLE CUSTOMERS(
+   CUST_ID       NUMBER NOT NULL PRIMARY KEY,
+   CUST_NAME     VARCHAR2 (20)      NOT NULL,
+   DOB           DATE,
+   STREET        VARCHAR2(200),
+   CITY          VARCHAR2(100),
+   STATE         VARCHAR2(100),
+   ZIP           VARCHAR2(12),
+   EMAIL_ID      VARCHAR2(256)
+);
+
+
+
+
+
+CREATE TABLE ADDRESS(
+   ZIP           VARCHAR2(12) PRIMARY KEY,
+   STREET        VARCHAR2(200),
+   CITY          VARCHAR2(100),
+   STATE         VARCHAR2(100)
+);
+
+
+
+CREATE TABLE CUSTOMERS(
+   CUST_ID       NUMBER              NOT NULL,
+   CUST_NAME     VARCHAR2 (20)      NOT NULL,
+   DOB           DATE,
+   ZIP           VARCHAR2(12) UNIQUE,
+   EMAIL_ID      VARCHAR2(256),
+   CONSTRAINT CS_FK1 FOREIGN KEY (ZIP) REFERENCES ADDRESS(ZIP)
+);
+
+
+
