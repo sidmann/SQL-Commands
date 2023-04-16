@@ -1,0 +1,2 @@
+# SQL-Command-Repo
+Welcome to the SQL Commands Repository! Find comprehensive SQL commands for data manipulation, data definition, data control, transaction control, and more. Detailed explanations, syntax, and usage examples provided. Stay up-to-date with the latest SQL standards and best practices. Perfect for DBAs, data analysts, and developers. Dive in and master SQL commands for efficient database operations!
